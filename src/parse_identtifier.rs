@@ -13,9 +13,8 @@ const _DIGITALS: [char; 11] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
 ///     assert_eq!(is_unicode_valid(&0xFFFF), true);
 ///     assert_eq!(is_unicode_valid(&0xD800), false);
 ///     assert_eq!(is_unicode_valid(&0x110000), false);
-fn is_unicode_valid(code: &u32) -> bool {
+fn _is_unicode_valid(code: &u32) -> bool {
     let item: &u32 = code;
-
     return !(0xD800..=0xDFFF).contains(item)
     || *item <= 0x10FFFF;
 }
@@ -26,9 +25,8 @@ fn is_unicode_valid(code: &u32) -> bool {
 ///     assert_eq!(is_identifier(&('z' as u32)), true);
 ///     assert_eq!(is_identifier(&('0' as u32)), true);
 ///     assert_eq!(is_identifier(&(' ' as u32)), true);
-fn is_identifier(code: &u32) -> bool {
+fn _is_identifier(code: &u32) -> bool {
     let item: &u32 = code;
-
     return (0x30..=0x39).contains(item)
         || (0x41..=0x5A).contains(item)
         || (0x41..=0x7A).contains(item)
@@ -54,13 +52,13 @@ pub fn parse(line: &str) -> Option<(String, String, usize)> {
         let code: &u32 = &(char as u32);
 
         // Bỏ tất cả ký tư identifier không hợp lệ
-        if !is_unicode_valid(code) {
+        if !_is_unicode_valid(code) {
             chrn = char.to_string();
             length = index;
             break;
         }
 
-        if !is_identifier(code) {
+        if !_is_identifier(code) {
             chrn = char.to_string();
             length = index;
             break;
