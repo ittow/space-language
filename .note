@@ -8,3 +8,7 @@ hồi, mong mọi người bỏ qua bất tiện này.
 Nếu có khó khắn về viết thuật toán trên Rust, thì tôi có thể khuyên
 bạn thử viết thuật toán trên một ngôn ngữ khác trước khi triển khai
 trên ngôn ngữ chính.
+
+Gần đây thì có một số thay đổi về thiết kế ngôn ngữ đặc biệt là ở
+low-level. Tôi cũng đã việt lại một số code và tổ chức lại để dễ mở
+rộng về sau.

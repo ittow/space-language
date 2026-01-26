@@ -1,5 +1,14 @@
-mod parse_identtifier;
-mod parse_bracket_group;
-mod parse_string;
+#![allow(warnings)]
 
-fn main() {}
+mod init;
+mod test;
+
+use test::__string;
+use test::__group_parentheses;
+
+use std::fs;
+
+fn main() {
+    __string();
+    __group_parentheses();
+}
